@@ -1,0 +1,29 @@
+name: Build-Release in Docker
+
+on:
+  workflow_dispatch:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+  REPO_GIT_HASH: ${{ github.sha }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: simonfucn/centos-7.9-rust:latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: display rust version
+      run: rustup --version
+
+    - name: display repo git hash
+      run: echo REPO_GIT_HASH=$REPO_GIT_HASH
+
+
