@@ -15,7 +15,8 @@ RUN echo "source scl_source enable llvm-toolset-7" >> ~/.bashrc
 
 COPY dump_syms /usr/local/bin/
 
-ENV PATH="$PATH:$HOME/.cargo/bin"
+# ENV PATH="$PATH:$HOME/.cargo/bin"
+ENV PATH="/root/.cargo/bin:${PATH}"
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
