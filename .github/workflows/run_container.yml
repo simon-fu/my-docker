@@ -1,4 +1,4 @@
-name: Build-Release in Docker
+name: Run container
 
 on:
   workflow_dispatch:
