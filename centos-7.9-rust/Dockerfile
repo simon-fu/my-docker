@@ -24,7 +24,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 
 # COPY dump_syms /usr/local/bin/
 COPY build-dump-syms.sh /tmp/
-RUN RUN source "/root/.cargo/env" ||\
+RUN source "/root/.cargo/env" ||\
   source scl_source enable llvm-toolset-7 ||\
   /tmp/build-dump-syms.sh 
 RUN /tmp/build-dump-syms.sh install_bin
