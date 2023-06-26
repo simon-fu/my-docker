@@ -13,7 +13,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # RUN source scl_source enable llvm-toolset-7
 # RUN echo "source scl_source enable llvm-toolset-7" >> /etc/bash.bashrc
-# RUN echo "source scl_source enable llvm-toolset-7" >> ~/.bashrc
+RUN echo "source scl_source enable llvm-toolset-7" >> ~/.bashrc
 
 COPY dump_syms /usr/local/bin/
 
