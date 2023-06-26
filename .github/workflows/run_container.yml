@@ -28,8 +28,9 @@ jobs:
 
     - name: display clang version
       run: |
-        source scl_source enable llvm-toolset-7
+        scl enable llvm-toolset-7 bash
         clang --version
+        echo REPO_GIT_HASH=$REPO_GIT_HASH
 
 
 
