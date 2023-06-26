@@ -19,7 +19,7 @@ COPY dump_syms /usr/local/bin/
 
 # ENV PATH="$PATH:$HOME/.cargo/bin"
 ENV PATH="/root/.cargo/bin:${PATH}"
-ENV PATH="/opt/rh/llvm-toolset-7/root/usr/bin:/opt/rh/llvm-toolset-7/root/usr/sbin:${PATH}"
+# ENV PATH="/opt/rh/llvm-toolset-7/root/usr/bin:/opt/rh/llvm-toolset-7/root/usr/sbin:${PATH}"
 # SHELL ["/usr/bin/scl", "enable", "llvm-toolset-7"]
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
