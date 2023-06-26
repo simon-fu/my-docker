@@ -34,5 +34,8 @@ jobs:
         clang --version
         echo REPO_GIT_HASH=$REPO_GIT_HASH
 
+    - name: display dump_syms version
+      run: dump_syms --version
+
 
 
