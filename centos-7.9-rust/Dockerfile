@@ -9,13 +9,19 @@ RUN source scl_source enable llvm-toolset-7
 # RUN yum install http://mirror.centos.org/centos/7/sclo/x86_64/rh/Packages/l/llvm-toolset-7-clang-5.0.1-4.el7.x86_64.rpm -y
 RUN yum install https://vault.centos.org/centos/8/PowerTools/x86_64/os/Packages/yasm-1.3.0-7.el8.x86_64.rpm -y
 RUN yum groupinstall 'Development Tools' -y
+
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN source "~/.cargo/env"
 
 # RUN source scl_source enable llvm-toolset-7
 # RUN echo "source scl_source enable llvm-toolset-7" >> /etc/bash.bashrc
 RUN echo "source scl_source enable llvm-toolset-7" >> ~/.bashrc
 
-COPY dump_syms /usr/local/bin/
+# COPY dump_syms /usr/local/bin/
+COPY build-dump-syms.sh /tmp/
+RUN /tmp/build-dump-syms.sh 
+RUN /tmp/build-dump-syms.sh install_bin
+RUN /tmp/build-dump-syms.sh clean_all
 
 # ENV PATH="$PATH:$HOME/.cargo/bin"
 ENV PATH="/root/.cargo/bin:${PATH}"
