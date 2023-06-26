@@ -8,7 +8,7 @@ RUN yum install llvm-toolset-7 -y
 # RUN source scl_source enable llvm-toolset-7 || true
 # RUN yum install http://mirror.centos.org/centos/7/sclo/x86_64/rh/Packages/l/llvm-toolset-7-clang-5.0.1-4.el7.x86_64.rpm -y
 RUN yum install https://vault.centos.org/centos/8/PowerTools/x86_64/os/Packages/yasm-1.3.0-7.el8.x86_64.rpm -y
-RUN yum groupinstall 'Development Tools' -y
+# RUN yum groupinstall 'Development Tools' -y
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 # RUN source "/root/.cargo/env" || true  
