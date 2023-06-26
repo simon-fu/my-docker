@@ -27,7 +27,9 @@ jobs:
       run: rustup --version
 
     - name: display clang version
-      run: clang --version
+      run: |
+        source scl_source enable llvm-toolset-7
+        clang --version
 
 
 
