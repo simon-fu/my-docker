@@ -30,7 +30,7 @@ jobs:
       run: |
         ps -p $$
         echo "$SHELL"
-        source scl_source enable llvm-toolset-7
+        source scl_source enable llvm-toolset-7 || true
         clang --version
         echo REPO_GIT_HASH=$REPO_GIT_HASH
 
