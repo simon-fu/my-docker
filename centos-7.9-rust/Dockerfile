@@ -11,7 +11,7 @@ RUN yum install https://vault.centos.org/centos/8/PowerTools/x86_64/os/Packages/
 RUN yum groupinstall 'Development Tools' -y
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
-RUN source "~/.cargo/env" || true
+RUN source "/root/.cargo/env" || true
 
 # RUN source scl_source enable llvm-toolset-7
 # RUN echo "source scl_source enable llvm-toolset-7" >> /etc/bash.bashrc
