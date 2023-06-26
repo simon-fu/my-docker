@@ -6,7 +6,7 @@ RUN yum update -y
 RUN yum install centos-release-scl -y 
 RUN yum install llvm-toolset-7 -y
 RUN yum install make -y
-
+RUN yum install openssl-devel -y
 
 # RUN yum install http://mirror.centos.org/centos/7/sclo/x86_64/rh/Packages/l/llvm-toolset-7-clang-5.0.1-4.el7.x86_64.rpm -y
 RUN yum install https://vault.centos.org/centos/8/PowerTools/x86_64/os/Packages/yasm-1.3.0-7.el8.x86_64.rpm -y
