@@ -23,13 +23,23 @@ jobs:
         echo "ASSET=$(./run-me.sh out_file_path)" >> $GITHUB_ENV
         echo "ASSET=${{ env.ASSET }}"
 
-    - name: Release
-      uses: softprops/action-gh-release@v1
+    # - name: Release
+    #   uses: softprops/action-gh-release@v1
+    #   with:
+    #     name: latest
+    #     prerelease: true
+    #     files: |
+    #         ${{ env.ASSET }}
+
+    - uses: "diillson/auto-release@latest"
       with:
-        name: latest
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
         prerelease: true
+        title: "Development Build"
         files: |
-            ${{ env.ASSET }}
+          ${{ env.ASSET }}
+
 
 
 
