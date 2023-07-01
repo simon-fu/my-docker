@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      deployments: write
+    #   deployments: write
       contents: write
-      packages: write
+    #   packages: write
     #   actions: read|write|none
     #   checks: read|write|none
       
