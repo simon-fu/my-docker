@@ -15,6 +15,20 @@ jobs:
 
     permissions:
       deployments: write
+      contents: write
+      packages: write
+    #   actions: read|write|none
+    #   checks: read|write|none
+      
+    #   id-token: read|write|none
+    #   issues: read|write|none
+    #   discussions: read|write|none
+      
+    #   pages: read|write|none
+    #   pull-requests: read|write|none
+    #   repository-projects: read|write|none
+    #   security-events: read|write|none
+    #   statuses: read|write|none
   
     steps:
     - uses: actions/checkout@v3
