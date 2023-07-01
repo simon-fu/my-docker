@@ -3,7 +3,7 @@ name: Run test
 on:
   workflow_dispatch:
 
-permissions: write-all
+# permissions: write-all
 
 env:
   REPO_GIT_HASH: ${{ github.sha }}
@@ -13,6 +13,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      deployments: write
+  
     steps:
     - uses: actions/checkout@v3
 
