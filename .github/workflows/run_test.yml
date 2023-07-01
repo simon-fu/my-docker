@@ -1,4 +1,4 @@
-name: Run container
+name: Run test
 
 on:
   workflow_dispatch:
