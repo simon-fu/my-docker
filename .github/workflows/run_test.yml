@@ -1,0 +1,33 @@
+name: Run container
+
+on:
+  workflow_dispatch:
+
+env:
+  REPO_GIT_HASH: ${{ github.sha }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: make out file
+      shell: bash
+      run: ./run-me.sh make_out_file
+
+    - name: make env.ASSET
+      run: |
+        echo "ASSET=$(./run-me.sh out_file_path)" >> $GITHUB_ENV
+        echo "ASSET=${{ env.ASSET }}"
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+            ${{ env.ASSET }}
+
+
+
