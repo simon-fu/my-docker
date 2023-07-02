@@ -59,7 +59,13 @@ jobs:
         title: "Development Build"
         files: |
           ${{ env.ASSET }}
-
-
-
+    
+    - name: where is scp
+      shell: bash
+      run: whereis scp
+      
+    - name: which scp
+      shell: bash
+      run: which scp
+    
 
