@@ -6,7 +6,7 @@ on:
 # permissions: write-all
 
 env:
-  REPO_GIT_BRANCH: ${GITHUB_REF_NAME}
+  REPO_GIT_BRANCH: ${{ GITHUB_REF_NAME }}
   REPO_GIT_HASH: ${{ github.sha }}
 
 jobs:
