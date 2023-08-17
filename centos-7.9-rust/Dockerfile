@@ -27,8 +27,8 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # SHELL ["/usr/bin/scl", "enable", "llvm-toolset-7"]
 
 RUN yum install -y wget
-RUN wget https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.tar.gz \
-    && tar -zxvf cmake-3.12.2-Linux-x86_64.tar.gz \
+RUN wget --quiet https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.tar.gz \
+    && tar -zxf cmake-3.12.2-Linux-x86_64.tar.gz \
     && mv cmake-3.12.2-Linux-x86_64 cmake-3.12.2 \
     && ln -sf /cmake-3.12.2/bin/* /usr/bin
 
