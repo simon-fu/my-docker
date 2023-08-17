@@ -24,8 +24,8 @@ jobs:
       run: |
         yum install -y wget
         cd /
-        wget https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.tar.gz
-        tar -zxvf cmake-3.12.2-Linux-x86_64.tar.gz
+        wget --quiet https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.tar.gz
+        tar -zxf cmake-3.12.2-Linux-x86_64.tar.gz
         mv cmake-3.12.2-Linux-x86_64 cmake-3.12.2
         ln -sf /cmake-3.12.2/bin/* /usr/bin
         cmake --version
