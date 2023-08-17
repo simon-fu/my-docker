@@ -26,6 +26,11 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # ENV PATH="/opt/rh/llvm-toolset-7/root/usr/bin:/opt/rh/llvm-toolset-7/root/usr/sbin:${PATH}"
 # SHELL ["/usr/bin/scl", "enable", "llvm-toolset-7"]
 
+RUN wget https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.tar.gz \
+    && tar -zxvf cmake-3.12.2-Linux-x86_64.tar.gz \
+    && mv cmake-3.12.2-Linux-x86_64 cmake-3.12.2 \
+    && ln -sf /cmake-3.12.2/bin/* /usr/bin
+
 # COPY dump_syms /usr/local/bin/
 COPY build-dump-syms.sh /tmp/
 RUN source "/root/.cargo/env" || true\
